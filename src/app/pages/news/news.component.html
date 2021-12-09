@@ -3,10 +3,10 @@
     <div class=" col-md-12">
       <div class=" card">
         <div class=" card-header">
-          <h4 class=" card-title">User Management</h4>
+          <h4 class=" card-title">News Management</h4>
           <p class="text-right">
-            <button [routerLink]="['/user/new']" routerLinkActive="router-link-active" class="btn btn-primary">
-              Add user
+            <button [routerLink]="['/news/new']" routerLinkActive="router-link-active"  class="btn btn-primary">
+              Add news
             </button>
           </p>
         </div>
@@ -16,34 +16,42 @@
               <thead class=" text-primary">
                 <tr>
                   <th>ID</th>
-                  <th>Full-name</th>
-                  <th>Username</th>
-                  <th>CMND/CCCD</th>
+                  <th>Title</th>
+                  <th>Content</th>
+                  <th>Description</th>
+                  <th>Num of Click</th>
+                  <th>Published Date</th>
                   <th></th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let user of users">
+                <tr *ngFor="let new of news">
                   <td>
-                    {{user.id}}
+                    {{new.id}}
                   </td>
                   <td>
-                    {{user.fullname}}
+                    {{new.title}}
                   </td>
                   <td>
-                    {{user.username}}
+                    {{new.content}}
                   </td>
                   <td>
-                    {{user.cmnd}}
+                    {{new.description}}
                   </td>
                   <td>
-                    <button (click)="goToUserDetail(user.id)" class=" btn btn-icon">
+                    {{new.numOfCLicks}}
+                  </td>
+                  <td>
+                    {{new.pubDate | date: 'dd/MM/yyyy'}}
+                  </td>
+                  <td>
+                    <button (click)="gotoDetail(new.id)" class=" btn btn-icon">
                       <i class=" tim-icons icon-pencil"> </i>
                     </button>
                   </td>
                   <td>
-                    <button (click)="onDelete(user.id)" class=" btn btn-icon">
+                    <button (click)="onDelete(new.id)" class=" btn btn-icon">
                       <i class=" tim-icons icon-trash-simple"> </i>
                     </button>
                   </td>

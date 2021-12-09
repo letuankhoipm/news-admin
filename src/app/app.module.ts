@@ -15,6 +15,9 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { UserNewComponent } from "./pages/user/user-new/user-new.component";
 import { UserDetailComponent } from './pages/user/user-detail/user-detail.component';
+import { NewsComponent } from './pages/news/news.component';
+import { NewsDetailComponent } from './pages/news/news-detail/news-detail.component';
+import { AddNewsComponent } from './pages/news/add-news/add-news.component';
 
 @NgModule({
   imports: [
@@ -34,6 +37,9 @@ import { UserDetailComponent } from './pages/user/user-detail/user-detail.compon
     AuthLayoutComponent,
     UserNewComponent,
     UserDetailComponent,
+    NewsComponent,
+    NewsDetailComponent,
+    AddNewsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

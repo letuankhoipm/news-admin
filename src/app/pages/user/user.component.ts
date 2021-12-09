@@ -38,9 +38,7 @@ export class UserComponent implements OnInit {
   public onDelete(userId: string): void {
     confirm("Are you sure you want to delete this user?");
     this.userServ.deleteUser(userId).subscribe((res: any) => {
-      if (!res) {
-        return;
-      }
+      this._getUsers();
       window.alert("delete user successfully!");
     });
   }
